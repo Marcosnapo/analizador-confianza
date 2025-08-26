@@ -1,21 +1,20 @@
 services:
   # Servicio de la Base de Datos
-  - type: pserv
-    name: postgres-db-analizador
-    env: postgres
+  - name: postgres-db-analizador
+    type: pserv
     plan: free
 
   # Servicio del Backend (nuestra aplicación)
-  - type: web
-    name: analizador-web-backend
+  - name: analizador-web-backend
+    type: web
     env: docker
     plan: free
     healthCheckPath: /
     envVars:
-      - key: DATABASE_URL # Usaremos esta única variable en nuestro código
+      - key: DATABASE_URL
         fromService:
-          type: pserv
           name: postgres-db-analizador
+          type: pserv
           property: connectionString
       - key: SECRET_KEY
         sync: false
