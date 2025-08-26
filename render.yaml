@@ -4,7 +4,7 @@ services:
     name: postgres-db-analizador
     env: postgres
     plan: free 
-    postgresMajorVersion: 15
+    version: "15"
     ipAllowList: [] # Permite conexiones desde cualquier lugar (necesario para el plan gratuito)
 
   # Servicio del Backend (nuestra aplicación)
