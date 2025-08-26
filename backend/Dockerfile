@@ -8,5 +8,8 @@ WORKDIR /app
 COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
+# --- NUEVA LÍNEA ---
+COPY ../frontend ./frontend
+
 # 4. Copiar el resto del código de la aplicación
 COPY ./app ./app
