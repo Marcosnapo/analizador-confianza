@@ -1,20 +1,15 @@
+# Versión final y compatible de render.yaml
 services:
-  # Servicio de la Base de Datos
-  - name: postgres-db-analizador
-    type: pserv
-    plan: free
-
   # Servicio del Backend (nuestra aplicación)
-  - name: analizador-web-backend
-    type: web
+  - type: web
+    name: analizador-web-backend
     env: docker
     plan: free
     healthCheckPath: /
-    envVars:
-      - key: DATABASE_URL
-        fromService:
-          name: postgres-db-analizador
-          type: pserv
-          property: connectionString
-      - key: SECRET_KEY
-        sync: false
+    # Conectamos la base de datos directamente aquí
+    databases:
+      - name: postgres-db-analizador
+        databaseName: analizador_db # El nombre que usamos en el código
+        user: admin
+
+  # Render ahora entiende que la base de datos es una dependencia del backend
