@@ -12,12 +12,17 @@ from . import auth
 from .database import SessionLocal, engine
 from .database import SessionLocal, engine, get_db
 import builtwith
+from sqlalchemy import text
 
 # Importaciones de nuestros módulos locales
 from . import crud, models, schemas
 from .database import SessionLocal, engine
 
-# Le decimos a SQLAlchemy que cree las tablas si no existen
+# Lógica para crear el esquema en la base de datos
+with engine.connect() as connection:
+    connection.execute(text("CREATE SCHEMA IF NOT EXISTS analizador_schema"))
+    connection.commit()# Le decimos a SQLAlchemy que cree las tablas si no existen
+
 models.Base.metadata.create_all(bind=engine)
 
 # --- 1. Inicialización y CORS ---
