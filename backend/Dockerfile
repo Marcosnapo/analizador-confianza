@@ -9,4 +9,4 @@ COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
 # 4. Copiar el resto del código de la aplicación
-COPY ./app /app
+COPY ./app ./app
