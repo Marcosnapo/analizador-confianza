@@ -3,8 +3,7 @@ services:
   - type: pserv
     name: postgres-db-analizador
     env: postgres
-    plan: free 
-    ipAllowList: [] # Permite conexiones desde cualquier lugar (necesario para el plan gratuito)
+    plan: free
 
   # Servicio del Backend (nuestra aplicación)
   - type: web
@@ -13,27 +12,10 @@ services:
     plan: free
     healthCheckPath: /
     envVars:
-      # Render inyecta las credenciales de la base de datos automáticamente
-      - key: POSTGRES_DB
+      - key: DATABASE_URL # Usaremos esta única variable en nuestro código
         fromService:
           type: pserv
           name: postgres-db-analizador
-          property: database
-      - key: POSTGRES_USER
-        fromService:
-          type: pserv
-          name: postgres-db-analizador
-          property: user
-      - key: POSTGRES_PASSWORD
-        fromService:
-          type: pserv
-          name: postgres-db-analizador
-          property: password
-      - key: POSTGRES_HOST
-        fromService:
-          type: pserv
-          name: postgres-db-analizador
-          property: host
-      # IMPORTANTE: Debes añadir tu clave secreta de JWT en el dashboard de Render
+          property: connectionString
       - key: SECRET_KEY
         sync: false
