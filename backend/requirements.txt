@@ -1,0 +1,13 @@
+fastapi
+uvicorn[standard]
+python-whois
+requests
+beautifulsoup4
+sqlalchemy
+psycopg2-binary
+passlib[bcrypt]
+python-jose[cryptography]
+email-validator
+python-multipart
+bcrypt==3.2.0
+builtwith

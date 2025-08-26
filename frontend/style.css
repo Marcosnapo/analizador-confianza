@@ -1,0 +1,141 @@
+/* Estilos Generales */
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Alineamos arriba para ver el scroll */
+    min-height: 100vh;
+    background-color: #f0f2f5;
+    margin: 0;
+    padding: 2rem 0;
+}
+
+/* Contenedor Principal de la App */
+.app-container {
+    width: 100%;
+    max-width: 600px;
+    background: white;
+    padding: 2rem 3rem;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+h1 {
+    color: #333;
+    margin-bottom: 0.5rem;
+}
+
+h2 {
+    color: #555;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+}
+
+p {
+    color: #666;
+    line-height: 1.5;
+}
+
+/* Estilos de Formularios y Botones */
+textarea, input[type="email"], input[type="password"] {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 1rem;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-sizing: border-box; /* Importante para el padding */
+}
+
+button {
+    width: 100%;
+    padding: 12px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    border: none;
+    background-color: #007bff;
+    color: white;
+    border-radius: 8px;
+    transition: background-color 0.2s;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+/* Área de Resultados y Errores */
+pre {
+    margin-top: 1.5rem;
+    text-align: left;
+    background-color: #f8f9fa; /* Un fondo blanco hueso más sutil */
+    color: #343a40; /* Color de texto más oscuro para mejor contraste */
+    padding: 1.5rem;
+    border-radius: 8px;
+    border: 1px solid #dee2e6; /* Un borde gris claro y delgado */
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    font-family: monospace;
+    line-height: 1.6; /* Un poco más de espacio entre líneas */
+}
+
+.error-message {
+    color: #d93025;
+    margin-top: 1rem;
+    min-height: 1.2em; /* Para que no salte la interfaz */
+}
+
+/* Estilos para Autenticación */
+.auth-container {
+    margin-top: 2rem;
+    padding-top: 2rem;
+    border-top: 1px solid #eee;
+}
+
+.auth-switch {
+    margin-top: 1.5rem;
+    font-size: 0.9rem;
+}
+
+.auth-switch a {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.auth-switch a:hover {
+    text-decoration: underline;
+}
+
+/* Sección del Usuario (cuando está logueado) */
+.user-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f8f9fa;
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    margin-bottom: 2rem;
+}
+
+.user-section span {
+    font-weight: bold;
+    color: #333;
+}
+
+#logout-btn {
+    width: auto; /* El botón de logout no ocupa todo el ancho */
+    padding: 8px 16px;
+    font-size: 0.9rem;
+    background-color: #6c757d;
+}
+
+#logout-btn:hover {
+    background-color: #5a6268;
+}
+
+/* Utilidad para Ocultar Vistas */
+.hidden {
+    display: none;
+}
