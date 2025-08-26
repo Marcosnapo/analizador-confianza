@@ -124,8 +124,8 @@ def login_for_access_token(form_data: OAuth2PasswordRequestForm = Depends(), db:
     return {"access_token": access_token, "token_type": "bearer"}
 
 # --- 5. Servir los archivos estáticos (el enfoque final) ---
-app.mount("/static", StaticFiles(directory="frontend"), name="static")
+app.mount("/static", StaticFiles(directory="../frontend"), name="static")
 
 @app.get("/", response_class=FileResponse)
 def read_index():
-    return FileResponse('frontend/index.html')
+    return FileResponse('../frontend/index.html')
