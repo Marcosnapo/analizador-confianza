@@ -35,7 +35,7 @@ Clona el repositorio:
 
 Bash
 
-git clone https://github.com/tu-usuario/url-guardian.git
+git clone https://github.com/Marcosnapo/analizador-confianza
 cd url-guardian
 Configura las variables de entorno:
 
